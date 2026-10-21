@@ -1,23 +1,66 @@
 aid: idalko
+
 name: Exalate
-description: 'Exalate is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Exalate is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog) and added to the network as a stub for
+  full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/idalko/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-20 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-20'
+
 modified: '2026-10-20'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/idalko-hosts.yml
+- type: Vendors
+  url: vendors/idalko-vendors.yml
+- type: PrivacyPolicy
+  url: https://idalko.com/privacy-policy
+- type: Blog
+  url: https://idalko.com/blog
+- type: DomainSecurity
+  url: security/idalko-domain-security.yml
 - type: Website
   url: https://idalko.com/
+
+apis:
+- name: Exalate API
+  description: Exalate provides synchronization and issue tracking integration APIs, but no public machine‑readable specification was discovered.
+  humanURL: https://idalko.com
+  baseURL: null
+  aid: idalko:exalate-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The Exalate site renders content via JavaScript, preventing machine‑readable spec discovery.
+  evidence:
+  - url: https://idalko.com
+    status: 200
+  checked: '2026-10-20'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
